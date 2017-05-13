@@ -1,6 +1,5 @@
 package com.example.labsoftware1.personasbasededatos;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -86,9 +85,11 @@ public class Persona {
         //insertar forma 1
         sql ="INSERT INTO Personas Values('"+this.getFoto()+"','"+this.getCedula()+"','"+this.getNombre()+"','"+this.getApellido()+"','"+this.getSexo()+"','"+this.getPasatiempo()+"')";
         db.execSQL(sql);
+
+
         //insertar forma 2
 
-        ContentValues nuevoRegistro = new ContentValues();
+        /**ContentValues nuevoRegistro = new ContentValues();
         nuevoRegistro.put("foto",this.getFoto());
         nuevoRegistro.put("cedula",this.getCedula());
         nuevoRegistro.put("nombre",this.getNombre());
@@ -97,8 +98,42 @@ public class Persona {
         nuevoRegistro.put("pasatiempo",this.getPasatiempo());
 
         db.insert("Personas",null, nuevoRegistro);
+        db.close();*/
+    }
+
+    public void eliminar(Context contexto){
+        SQLiteDatabase db;
+        String sql;
+
+        PersonaSQLiteOpenHelper aux = new PersonaSQLiteOpenHelper(contexto,"DBPersonas",null,2);
+        db =aux.getWritableDatabase();
+
+        sql="DELETE FROM Personas where cedula='"+this.getCedula()+"'";
+
+        db.execSQL(sql);
         db.close();
     }
+
+    public void modificar(Context contexto){
+        SQLiteDatabase db;
+        String sql;
+        //Abrir la conexión en modo escritura
+        PersonaSQLiteOpenHelper aux = new PersonaSQLiteOpenHelper(contexto,"DBPersonas",null,2);
+        db =aux.getWritableDatabase();
+
+
+
+
+        sql="UPDATE Personas " +
+                "SET nombre='"+this.getNombre()+"',"+
+                "apellido='"+this.getApellido()+"',"+
+                "sexo='"+this.getSexo()+"',"+
+                "pasatiempo='"+this.getPasatiempo()+"'"+
+                "where cedula ='"+this.getCedula()+"'";
+
+        db.execSQL(sql);
+        db.close();
+        }
 
 
 

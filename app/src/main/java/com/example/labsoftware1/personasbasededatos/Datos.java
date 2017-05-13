@@ -39,4 +39,34 @@ public class Datos {
         return personas;
     }
 
+
+    public static Persona buscarPersona(Context contexto, String ced){
+
+        SQLiteDatabase db;
+        String sql,foto, nombre, cedula, apellido, sexo, pasatiempo;
+        Persona p=null;
+
+        PersonaSQLiteOpenHelper aux = new PersonaSQLiteOpenHelper(contexto,"DBPersonas",null,2);
+        db =aux.getReadableDatabase();
+
+        sql="select * from Personas where cedula ='"+ced+"'";
+        Cursor c = db.rawQuery(sql,null);
+
+        if (c.moveToFirst()){
+
+                foto = c.getString(0);
+                cedula = c.getString(1);
+                nombre = c.getString(2);
+                apellido = c.getString(3);
+                sexo = c.getString(4);
+                pasatiempo = c.getString(5);
+                p = new Persona(foto,cedula,nombre,apellido,sexo,pasatiempo);
+
+
+        }db.close();
+        return p;
+    }
+
+
+
 }

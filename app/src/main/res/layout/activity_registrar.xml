@@ -43,11 +43,12 @@
                 android:inputType="number" />
 
             <Button
-                android:text="@string/buscar"
+                android:id="@+id/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/button"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:onClick="buscar"
+                android:text="@string/buscar" />
 
         </LinearLayout>
 
@@ -136,11 +137,12 @@
                 android:text="@string/guardar" />
 
             <Button
-                android:text="@string/modificar"
+                android:id="@+id/button2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/button2"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:onClick="modificar"
+                android:text="@string/modificar" />
 
         </LinearLayout>
 
@@ -151,11 +153,12 @@
             android:layout_weight="1">
 
             <Button
-                android:text="@string/eliminar"
+                android:id="@+id/button5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/button5"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:onClick="eliminar"
+                android:text="@string/eliminar" />
 
             <Button
                 android:id="@+id/button4"

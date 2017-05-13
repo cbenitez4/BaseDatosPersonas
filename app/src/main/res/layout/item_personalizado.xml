@@ -15,38 +15,41 @@
             android:layout_height="115dp" />
 
         <TextView
-            android:text="TextView"
+            android:id="@+id/txtCedulaP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_marginLeft="36dp"
             android:layout_marginStart="36dp"
             android:layout_marginTop="30dp"
-            android:id="@+id/txtCedulaP"
-            android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/imgFoto"
-            android:textStyle="normal|bold"
-            android:textSize="24sp" />
+            android:text="TextView"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp"
+            android:textStyle="normal|bold" />
 
         <TextView
-            android:text="TextView"
+            android:id="@+id/txtApellidoP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtApellidoP"
             android:layout_alignLeft="@+id/txtNombreP"
             android:layout_alignStart="@+id/txtNombreP"
-            android:textStyle="normal|bold"
+            android:layout_below="@+id/txtNombreP"
+            android:text="TextView"
+            android:textColor="@android:color/background_dark"
             android:textSize="18sp"
-            android:layout_below="@+id/txtNombreP" />
+            android:textStyle="normal|bold" />
 
         <TextView
-            android:text="TextView"
+            android:id="@+id/txtNombreP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtNombreP"
-            android:textSize="18sp"
-            android:textStyle="normal|bold"
             android:layout_alignLeft="@+id/txtCedulaP"
             android:layout_alignStart="@+id/txtCedulaP"
-            android:layout_below="@+id/txtCedulaP" />
+            android:layout_below="@+id/txtCedulaP"
+            android:text="TextView"
+            android:textColor="@android:color/background_dark"
+            android:textSize="18sp"
+            android:textStyle="normal|bold" />
     </RelativeLayout>
 </LinearLayout>
