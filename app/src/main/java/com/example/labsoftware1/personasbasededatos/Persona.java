@@ -80,7 +80,7 @@ public class Persona {
         String sql;
 
         //Abrir la conexión de base de datos en modo escritura
-        PersonaSQLiteOpenHelper aux =new PersonaSQLiteOpenHelper(contexto,"DBPersonas",null,1);
+        PersonaSQLiteOpenHelper aux =new PersonaSQLiteOpenHelper(contexto,"DBPersonas",null,2);
         db = aux.getWritableDatabase();
 
         //insertar forma 1
@@ -93,7 +93,8 @@ public class Persona {
         nuevoRegistro.put("cedula",this.getCedula());
         nuevoRegistro.put("nombre",this.getNombre());
         nuevoRegistro.put("apellido",this.getApellido());
-        nuevoRegistro.put("sexo",this.getPasatiempo());
+        nuevoRegistro.put("sexo",this.getSexo());
+        nuevoRegistro.put("pasatiempo",this.getPasatiempo());
 
         db.insert("Personas",null, nuevoRegistro);
         db.close();
